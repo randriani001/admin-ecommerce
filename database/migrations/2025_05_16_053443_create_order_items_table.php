@@ -13,11 +13,14 @@ return new class extends Migration
     {
         Schema::create('order_items', function (Blueprint $table) {
             $table->uuid('id')->primary();  
-            $table->integer('order_id');
+            $table->uuid('order_id');
             $table->uuid('product_variant_id');
-            $table->float('price');
             $table->integer('quantity');
+            $table->float('price');
             $table->timestamps();
+
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
+            $table->foreign('product_variant_id')->references('id')->on('product_variants');
         });
     }
 

@@ -60,7 +60,8 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
           className="max-w-sm"
         />
         
-        <Link href="/dashboard/products/create">
+        <Link href={route('products.create')}>
+        {/* "/dashboard/products/create" */}
         <Button>
             <Plus/>
             Create</Button>

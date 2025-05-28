@@ -63,7 +63,7 @@ export function DataTable<TData, TValue>({
           }
           className="max-w-sm"
         />
-        <Link href="/dashboard/categories/create">
+        <Link href={route('categories.create')}>
         <Button>
             <Plus />
             Create</Button>

@@ -26,7 +26,7 @@ export default function CategoryForm({category}: Props) {
          e.preventDefault();
 
          if (category) {
-            put('/dashboard/categories/' + category.id, {
+            put(route('categories.update', [category.id]), {
                 onSuccess: () => {
                     Swal.fire({
                         title: "Success",
@@ -36,7 +36,8 @@ export default function CategoryForm({category}: Props) {
                 }
             })
          } else (
-            post('/dashboard/categories')
+            post(route('categories.store'))
+            //('/dashboard/categories')
          )};
 
          //post('/dashboard/categories');

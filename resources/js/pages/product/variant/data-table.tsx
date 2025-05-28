@@ -62,7 +62,8 @@ export function DataTable<TData, TValue>({ columns,data, productId }: DataTableP
           className="max-w-sm"
         />
         
-        <Link href={`/dashboard/products/${productId}/variants/create`}>
+        <Link href={route('products.variants.create', productId)}>
+        {/* href={`/dashboard/products/${productId}/variants/create`} */}
         <Button>
             <Plus/>
             Create</Button>

@@ -50,12 +50,14 @@ Route::get('/profiles', function () {
     return inertia('profile');
 });
 
-Route::prefix('/dashboard')->middleware(['auth','admin'])->group(function () {
+Route::prefix('/admin')
+    // ->middleware(['auth','admin'])
+    ->group(function () {
     Route::resource('categories', CategoryController::class);
     Route::resource('products', ProductController::class);
     Route::resource('products.variants', ProductVariantController::class);
 
-    Route::get('/', function () {
+    Route::get('/dashboard', function () {
         return inertia('home');
     })->name('dashboard');
 
@@ -77,3 +79,6 @@ Route::get('login', function () {
 
 Route::post('login', [AuthController::class, 'authenticate']);
 
+// Route::get('test', function () {
+//     return "test 123";
+// })->name('test');

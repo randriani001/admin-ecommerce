@@ -59,7 +59,7 @@ export default function ProductForm({categories,product}: Props) {
             // })
 
             router.post(
-                `/dashboard/products/${product.id}`, 
+                route('products.update', [product.id]), 
                 {
                     ...data,
                     _method: "put", 
@@ -69,7 +69,8 @@ export default function ProductForm({categories,product}: Props) {
                 },
             ); 
         } else (
-            post('/dashboard/products'), {
+            post(route('products.store')), {
+                // '/dashboard/products'
                 preserveScroll: true,
             });
         };
