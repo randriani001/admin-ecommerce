@@ -9,6 +9,8 @@ interface Props {
 }
 
 export default function ProductVariantPage({ product, variants }: Props) {
+  console.log (variants)
+
   return (
     <DashboardLayout>
       <div className="p-10">
