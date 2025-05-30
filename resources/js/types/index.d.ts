@@ -26,3 +26,7 @@ export interface ProductVariant {
     created_at: Date;
     updated_at: Date;
 }
+
+export interface Order {
+    
+}

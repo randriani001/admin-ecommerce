@@ -19,9 +19,9 @@ class AuthController extends Controller
 
             // dd($request->all());
 
-            // return redirect()->intended("dashboard");
+            return redirect()->intended(route('dashboard'));
 
-            return redirect()->route('test');
+            // return redirect()->route('test');
         }
 
         return back()->withErrors([

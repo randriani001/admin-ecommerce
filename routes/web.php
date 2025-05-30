@@ -22,9 +22,9 @@ use Inertia\Inertia;
 
 // Route::resource('products', ProductController::class);
 
-Route::get('/', function () {
-    return inertia('index');
-});
+// Route::get('/', function () {
+//     return inertia('index');
+// });
 
 // Route::get('/products', function () {
 //     return inertia('product');
@@ -48,6 +48,10 @@ Route::get('/dashboard', function () {
 
 Route::get('/profiles', function () {
     return inertia('profile');
+});
+
+Route::get('/', function () {
+    return redirect()->route('dashboard');
 });
 
 Route::prefix('/admin')
